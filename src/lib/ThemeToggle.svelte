@@ -4,7 +4,7 @@
 
 <button
   on:click={toggleTheme}
-  class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/10 dark:bg-black/30 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500 transition-all duration-300 group"
+  class="fixed top-6 right-6 z-50 p-2 rounded-full bg-white/10 dark:bg-black/30 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500 transition-all duration-300 group"
   aria-label="Toggle theme"
 >
   {#if $theme === 'dark'}
