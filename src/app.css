@@ -1,2 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&family=Michroma&family=Orbitron:wght@400..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+	--font-future: 'Orbitron', sans-serif;
+	--font-code: 'JetBrains Mono', ui-monospace, monospace;
+	--font-mplus2: 'M PLUS 2', sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+	.text-glow-light {
+		text-shadow: 0 0 8px #1e40af, 1px 1px 0 #1e40af, -1px -1px 0 #1e40af, 1px -1px 0 #1e40af, -1px 1px 0 #1e40af;
+	}
+
+	.text-glow-dark {
+		text-shadow: 0 0 10px #0670ff, 1px 1px 0 #0670ff, -1px -1px 0 #0670ff, 1px -1px 0 #0670ff, -1px 1px 0 #0670ff;
+	}
+
+	.cursor-blink {
+		animation: blink 1s infinite;
+	}
+
+	@keyframes blink {
+		0%, 50% { opacity: 1; }
+		51%, 100% { opacity: 0; }
+	}
+}

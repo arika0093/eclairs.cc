@@ -5,11 +5,7 @@ export default {
     "./src/**/*.{svelte,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        roboto: ['M PLUS 2', 'sans-serif'],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }
