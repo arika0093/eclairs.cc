@@ -1,9 +1,21 @@
 <section class="h-screen w-full relative overflow-hidden flex items-center justify-center bg-white dark:bg-black transition-colors duration-500">
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 bg-[url('/bgw.png')] dark:bg-[url('/bg.png')] bg-repeat-space bg-center opacity-90 duration-500"></div>
+  <!-- Light mode background -->
+  <div class="absolute inset-0 dark:opacity-0 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-[url('/bgw.png')] bg-repeat-space bg-center opacity-90"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_bottom,white_0%,transparent_15%,transparent_85%,white_100%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,white_0%,transparent_15%,transparent_85%,white_100%)]"></div>
+  </div>
+
+  <!-- Dark mode background -->
+  <div class="absolute inset-0 opacity-0 dark:opacity-100 transition-opacity duration-500">
+    <div class="absolute inset-0 bg-[url('/bg.png')] bg-repeat-space bg-center opacity-60"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_bottom,black_0%,transparent_15%,transparent_85%,black_100%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,black_0%,transparent_15%,transparent_85%,black_100%)]"></div>
+  </div>
 
   <!-- Content -->
   <div class="relative z-10 text-center px-4">
+    <div class="absolute inset-0 bg-white dark:bg-black opacity-10 dark:opacity-0 transition-colors duration-500"></div>
     <h1 class="text-6xl mb-6 font-future text-gray-900 text-white transition-colors duration-500 text-glow-light dark:text-glow-dark">
       eclairs.cc
     </h1>
@@ -19,9 +31,6 @@
 
   const texts = [
     'Program, Game, and etc.',
-    'Web Development & Design',
-    'Creative Coding Projects',
-    'Interactive Experiences'
   ];
 
   let displayText = '';
