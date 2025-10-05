@@ -1,3 +1,11 @@
+<script lang="ts">
+  import TypeWriter from './TypeWriter.svelte';
+
+  const texts = [
+    'Program, Game, and etc.',
+  ];
+</script>
+
 <section class="h-screen w-full relative overflow-hidden flex items-center justify-center bg-white dark:bg-black transition-colors duration-500">
   <!-- Light mode background -->
   <div class="absolute inset-0 dark:opacity-0 transition-opacity duration-500">
@@ -21,52 +29,8 @@
     </h1>
     <hr class="border-t-2 mx-auto mb-2 border-blue-800 dark:border-blue-500 transition-colors duration-500">
     <p class="text-xl lg:text-2xl mb-8 font-future text-gray-700 dark:text-blue-300 transition-colors duration-500">
-      {displayText}<span class="cursor-blink">_</span>
+      <TypeWriter {texts} />
     </p>
   </div>
 </section>
-
-<script>
-  import { onMount } from 'svelte';
-
-  const texts = [
-    'Program, Game, and etc.',
-  ];
-
-  let displayText = '';
-  let currentIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  onMount(() => {
-    const typeSpeed = 70;
-    const deleteSpeed = 40;
-    const pauseTime = 2400;
-
-    function type() {
-      const currentText = texts[currentIndex];
-
-      if (!isDeleting && charIndex <= currentText.length) {
-        displayText = currentText.substring(0, charIndex);
-        charIndex++;
-        setTimeout(type, typeSpeed);
-      } else if (!isDeleting && charIndex > currentText.length) {
-        setTimeout(() => {
-          isDeleting = true;
-          type();
-        }, pauseTime);
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-        displayText = currentText.substring(0, charIndex);
-        setTimeout(type, deleteSpeed);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        currentIndex = (currentIndex + 1) % texts.length;
-        setTimeout(type, 500);
-      }
-    }
-
-    type();
-  });
-</script>
 
