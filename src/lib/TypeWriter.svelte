@@ -48,7 +48,9 @@
   });
 </script>
 
-{displayText}<span class="cursor-blink">_</span>
+<span translate="no">
+  {displayText}<span class="cursor-blink">_</span>
+</span>
 
 <style>
   .cursor-blink {

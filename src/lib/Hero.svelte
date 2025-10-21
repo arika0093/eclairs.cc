@@ -28,7 +28,7 @@
 
   <!-- Content -->
   <div class="relative z-10 text-center px-4">
-    <h1 class="text-6xl lg:text-7xl mb-4 font-future text-gray-900 text-white  text-glow-light dark:text-glow-dark">
+    <h1 translate="no" class="text-6xl lg:text-7xl mb-4 font-future text-gray-900 text-white  text-glow-light dark:text-glow-dark">
       eclairs.cc
     </h1>
     <hr class="border-t-2 mx-auto mb-2 border-blue-800 dark:border-blue-500 ">
